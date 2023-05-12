@@ -1,0 +1,24 @@
+:root {
+    --red: #CD191E;
+    --green: #309E40;
+    --gray: #F2F2F2;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--gray);
+    font-weight: 400;
+}
+
+input, select, textarea {
+    font-family: 'Inter', sans-serif;
+}
+
