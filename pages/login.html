@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IFSHOP | Login</title>
+    <link rel="stylesheet" href="./login.css" />
     <link rel="stylesheet" href="../styles.css">
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="img-container">
+        <img src="../assets/login-img.png" alt="homem mexendo no notebook" />
+      </div>
+      <div class="form-container">
+        <h1>LOGIN</h1>
+
+        <form action="" class="form-items">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" />
+          </div>
+
+          <div>
+            <label for="pasword">Senha</label>
+            <input id="pasword" type="password" />
+          </div>
+
+          <div class="dont-have-an-account">
+            Não possui uma conta?
+            <a href="./signup.html">Cadastre-se!</a>
+          </div>
+          
+
+          <button type="submit">Enviar</button>
+        </form>
+
+        <div><img src="../assets/ifsul-logo.svg" alt="logo do ifsul" /></div>
+      </div>
+    </div>
+  </body>
 </html>
