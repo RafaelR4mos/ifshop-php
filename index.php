@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
   <title>IFSHOP | Login</title>
   <link rel="icon" type="image/SVG" href="./assets/ifsul-logo.svg">
   <link rel="stylesheet" href="./styles.css">
@@ -21,7 +24,7 @@
       <form method="post" action="./phpFunctions.php" class="form-items">
         <div class="input-container">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" placeholder="ex: John Doe" required />
         </div>
         <div class="input-container">
           <label for="pasword">Senha</label>

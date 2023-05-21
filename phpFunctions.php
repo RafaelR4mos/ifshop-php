@@ -1,5 +1,5 @@
 <?php
-$bd_host = "192.168.20.18"; //External: 200.19.1.18 | Internal:  http://192.168.20.18/
+$bd_host = "200.19.1.18"; //External: 200.19.1.18 | Internal:  http://192.168.20.18/
 $base_de_dados = "rafaelsantos";
 $bd_usuario = "rafaelsantos";
 $bd_senha = "123456";
@@ -44,7 +44,10 @@ function validateLogin($email, $senha)
   $senhaInput = $_POST['password'];
 
   if ($email === $emailInput && $senha === $senhaInput) {
-    echo "<script>alert('Autenticado com sucesso!')</script>";
+    echo
+    "<script>
+    window.location.href = '/trabalho-final/pages/areaLogada.php'
+    </script>";
   } else {
     echo "
     <script>
