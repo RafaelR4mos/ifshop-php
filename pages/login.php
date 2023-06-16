@@ -1,8 +1,6 @@
 
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
   <title>IFSHOP | Login</title>
   <link rel="icon" type="image/SVG" href="./assets/ifsul-logo.svg">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="./login.css">
 </head>
 
 <body>
