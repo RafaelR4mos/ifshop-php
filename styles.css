@@ -20,7 +20,9 @@ body {
     overflow: hidden;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     font-family: 'Inter', sans-serif;
 }
 
@@ -29,7 +31,8 @@ h1 {
     text-transform: uppercase;
 }
 
-a, ul {
+a,
+ul {
     text-decoration: none;
 }
 
@@ -56,7 +59,7 @@ li {
 
 }
 
-.page-container > div {
+.page-container>div {
     flex: 1;
     height: 100vh;
 }
@@ -83,25 +86,25 @@ li {
     max-width: 450px;
 }
 
-.form-items > .input-container {
+.form-items>.input-container {
     display: flex;
     flex-direction: column;
     flex: 1;
     gap: 0.2rem;
 }
 
-.form-items > div label {
+.form-items>div label {
     font-weight: 500;
 }
 
-.form-items > div input {
+.form-items>div input {
     flex: 1;
     border-radius: 4px;
     padding: 0.6rem;
     border: 1px solid #979797;
 }
 
-.form-items > div input:hover {
+.form-items>div input:hover {
     border: 1px solid #524f4f;
 }
 
