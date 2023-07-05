@@ -11,12 +11,7 @@ $db = pg_connect($connString) or die("Could not connect");
 $emailInput = $_POST['email'];
 $senhaInput = $_POST['password'];
 
-echo "<h2>Dados form: </h2>";
-echo $_POST['email'];
-echo '<br>';
-echo $_POST['password'];
-
-$query = "SELECT * FROM tb_usuarios WHERE email_usuario ilike '{$emailInput}'";
+$query = "SELECT * FROM tb_aluno WHERE email_aluno ilike '{$emailInput}'";
 $result = pg_query($db, $query);
 
 if (!$result) {
@@ -31,31 +26,28 @@ if (!$filteredUser) {
   die("Nenhum dado encontrado");
 }
 foreach ($filteredUser as $row) {
-  echo "Nome: " . $row['nome_usuario'] . "<br>";
-  echo "email: " . $row['email_usuario'] . "<br>";
-  echo "senha: " . $row['senha_usuario'] . "<br>";
-  echo "<br>";
 
-  validateLogin($row['email_usuario'], $row['senha_usuario'], $row['id_usuario']);
+  validateLogin($row['email_aluno'], $row['senha_aluno'], $row['id_aluno'], $row['nm_aluno']);
 }
 
-function validateLogin($email, $senha, $id_usuario)
+function validateLogin($email, $senha, $idUsuario, $nmAluno)
 {
   $emailInput = $_POST['email'];
   $senhaInput = $_POST['password'];
 
-  
 
   if ($email === $emailInput && $senha === $senhaInput) {
     echo
     "<script>
     window.location.href = '/ifshop-php/pages/areaLogada.php'
-    localStorage.setItem('token', idToken)
     </script>";
+    setcookie("userName", $nmAluno, time() + (86400 * 30), "/"); 
+    setcookie("userId", $idUsuario, time() + (86400 * 30), "/"); 
   } else {
     echo "
     <script>
     alert('Dados do login incorretos!') 
+    window.location.href = '/ifshop-php/pages/login.php'
     </script>";
   }
 }

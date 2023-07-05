@@ -11,6 +11,14 @@
     gap: 2.125rem;
 }
 
+.header-btn-container button {
+    min-width: fit-content;
+}
+
+.page-container {
+    padding: 2.625rem 4rem;
+}
+
 .button {
     display: flex;
     justify-content: center;
@@ -42,46 +50,40 @@
     border: 2px solid var(--green);
 }
 
-.big-hero-section {
+.page-info {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
 }
 
-.acquire-courses {
+.page-info span {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+/*CARD Styles*/
+
+.courses-container {
     display: flex;
-    flex-direction: column;
     gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
 }
 
-.acquire-courses>button {
-    width: fit-content
+.course {
+    width: 380px;
+    border-radius: 6px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.acquire-courses>button a {
-    color: white;
-}
-
-.big-hero-section {
-    height: 75vh;
-}
-
-.big-hero-img-container img {
-    max-width: 90%;
-}
-
-footer {
-    padding: 2.625rem 0;
+.course-header {
     display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
 }
 
-footer a {
-    color: var(--green);
-    font-weight: 600;
+.course p {
+    padding: 1rem 0.5rem;
+    text-align: justify;
 }

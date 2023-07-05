@@ -9,15 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <title>IFSHOP | Cadastro</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="./signup.css">
+    <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="../styles/global.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
 <body>
     <div class="page-container">
         <nav class="go-back-btn">
-            <a href="../"><- Voltar</a>
+            <a href="./login.php"><- Voltar</a>
         </nav>
         <div class="img-container">
             <img src="../assets/login-img.png" alt="homem mexendo no notebook" />
