@@ -4,18 +4,16 @@ $base_de_dados = "rafaelsantos";
 $bd_usuario = "rafaelsantos";
 $bd_senha = "123456";
 $selectDinamico = "(select max(id_aluno)+1 from tb_aluno)";
-
+$userName;
 $connString = "host=$bd_host port=5432 dbname=$base_de_dados user=$bd_usuario password=$bd_senha";
 $db = pg_connect($connString) or die("Could not connect");
-
-
-
 $query = "select from tb_aluno where id_aluno = 1";
 $result = pg_query($db, $query);
 
 
-$userName = $_COOKIE['userName'];
-$userId = $_COOKIE['userId'];
+if(!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
+  header('location: login.php');
+}
 ?>
 
 <!DOCTYPE html>
