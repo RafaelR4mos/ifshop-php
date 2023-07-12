@@ -16,7 +16,7 @@ if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Área logada</title>
+  <title>Adquira cursos!</title>
   <link rel="stylesheet" href="../styles/global.css">
   <link rel="stylesheet" href="../styles/meus-cursos.css">
 </head>
@@ -25,7 +25,7 @@ if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
   <header class="header-container">
     <img src="../assets/ifsul-logo.svg" alt="logo ifsul">
     <div class="header-btn-container">
-      <a href="" class="link" id="my-courses-link">Meus Cursos</a>
+      <a href="./areaLogada.php" class="link" id="my-courses-link">Meus Cursos</a>
       <button class="button"><a href="./acquireCourse.php" class="link">Adquira cursos!</a></button>
       <button onclick="logoutUser()" class="button secondary"><span class="link">Logout</span></button>
 
@@ -36,11 +36,11 @@ if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
     <div class="page-info">
       <?php
       echo '<h1>' . 'Bem vindo, ' . $userName . '!' . '</h1>';
-      echo '<span>' . 'Seus cursos: ' . $courses_quantity[0]['course_quantity'] . '</span>';
+      echo '<span>' . 'Cursos adquiridos ' . $courses_quantity[0]['course_quantity'] . '</span>';
       ?>
     </div>
 
-    <h2>Confira os seus cursos</h2>
+    <h2>Adquira outros cursos</h2>
     <div class="courses-container">
 
       <?php
