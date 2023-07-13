@@ -18,7 +18,7 @@ function getCourseQuantity($db, $id_usuario)
 
 function getUserCourses($db, $id_usuario)
 {
-  $query = "SELECT nm_curso, nm_professor, carga_horaria, descricao_curso, img_capa_curso
+  $query = "SELECT nm_curso, nm_professor, a.id_curso, carga_horaria, descricao_curso, img_capa_curso
   FROM tb_aluno_curso a, tb_cursos b 
   WHERE a.id_aluno = $id_usuario AND
         b.id_curso = a.id_curso
@@ -37,8 +37,15 @@ function getAvailableCourses($db, $id_usuario)
   return $courses;
 }
 
-function subscribeInCourse($db, $id_curso, $id_usuario,)
+function subscribeInCourse($db, $id_curso, $id_usuario)
 {
   $query = "INSERT INTO tb_aluno_curso VALUES($id_curso, $id_usuario)";
+  pg_query($db, $query);
+}
+
+function abandonCourse($db, $id_curso, $id_usuario)
+{
+  $query = "DELETE FROM Tb_aluno_curso where 
+  id_curso = $id_curso and id_aluno = $id_usuario";
   pg_query($db, $query);
 }

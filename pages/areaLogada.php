@@ -44,10 +44,11 @@ require('../php/dbFunctions.php');
     <div class="courses-container">
 
       <?php
-      foreach ($user_course_info as $course) {
-        echo
-        '
-      <div class="course">
+      if (count($user_course_info)) {
+        foreach ($user_course_info as $course) {
+          echo
+          '
+      <form action="areaLogada.php?id=' . $course["id_curso"] . '" class="course" method="POST">
       <img src="' . $course["img_capa_curso"] . '" class="card-img">
       <div class="course-header">
         <div>
@@ -57,8 +58,19 @@ require('../php/dbFunctions.php');
         <span>CH: ' . $course["carga_horaria"] . '</span>
       </div>
       <p>' . $course["descricao_curso"] . '</p>
-    </div>
+      <button type="submit" class="button acquire-course abandon">Abandonar curso</button>
+    </form>
       ';
+        }
+      } else {
+        echo
+        '
+        <div class="no-course-container">
+        <img src="../assets/note-icon.svg" alt="ícone de nota">
+        <h2>Você ainda não adquiriu nenhum curso :(</h2>
+        <p>Comece a estudar <a class="highlight-text" href="./acquireCourse.php">agora!</a></p>
+        </div>
+        ';
       }
       ?>
 
@@ -73,3 +85,18 @@ require('../php/dbFunctions.php');
 </body>
 
 </html>
+
+<?php
+if (isset($_GET['id'])) {
+  $id_curso = $_GET['id'];
+  global $db;
+  abandonCourse($db, $id_curso, $id_usuario);
+  echo
+  '
+    <script>
+      alert("Curso abandonado com sucesso!");
+      window.location.href = "areaLogada.php";
+    </script>
+  ';
+}
+?>

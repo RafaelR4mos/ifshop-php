@@ -45,7 +45,7 @@
 }
 
 .link.active {
-  padding-bottom: 4px;
+  padding-bottom: 2px;
   padding-inline: 0px;
   border-bottom: 2px solid var(--green);
 }
@@ -107,4 +107,30 @@
   padding: 0.6rem;
   width: 70%;
   margin: 2rem auto 1rem;
+}
+
+.acquire-course.abandon {
+  background-color: rgb(193, 18, 18);
+}
+
+.no-course-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.no-course-container img {
+  margin-bottom: 0.5rem;
+  width: 3rem;
+}
+
+.no-course-container p {
+  font-size: 1.2rem;
+}
+
+.highlight-text {
+  color: var(--green);
+  font-weight: 700;
 }
