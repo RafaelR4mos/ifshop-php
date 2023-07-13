@@ -44,10 +44,10 @@ if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
     <div class="courses-container">
 
       <?php
-      foreach ($user_course_info as $course) {
+      foreach ($all_courses as $course) {
         echo
         '
-      <div class="course">
+      <form method="get" class="course">
       <img src="' . $course["img_capa_curso"] . '" class="card-img">
       <div class="course-header">
         <div>
@@ -57,7 +57,8 @@ if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
         <span>CH: ' . $course["carga_horaria"] . '</span>
       </div>
       <p>' . $course["descricao_curso"] . '</p>
-    </div>
+      <button type="submit" class="button acquire-course">Adquirir curso</button>
+    </form>
       ';
       }
       ?>

@@ -14,7 +14,7 @@ $result = pg_query($db, $query);
 
 if ($result) {
   echo "<script>alert('Usuário cadastro com sucesso!')</script>";
-  header('Location: /ifshop-php/login.html');
+  header('Location: /ifshop-php/pages/login.html');
 } else {
   echo "Erro na entrada dos dados\n";
 }

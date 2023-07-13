@@ -1,12 +1,12 @@
 <?php
-require('../php/dbFunctions.php');
-
 if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
-  header('location: login.php');
+  header('location: login.html');
 } else {
   $userName = $_COOKIE['userName'];
   $id_usuario = $_COOKIE['userId'];
 }
+
+require('../php/dbFunctions.php');
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +39,8 @@ if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
       echo '<span>' . 'Seus cursos: ' . $courses_quantity[0]['course_quantity'] . '</span>';
       ?>
     </div>
+    <h2>Confira seus cursos</h2>
 
-    <h2>Confira os seus cursos</h2>
     <div class="courses-container">
 
       <?php

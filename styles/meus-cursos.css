@@ -102,3 +102,9 @@
   padding: 1rem 0.5rem;
   text-align: justify;
 }
+
+.acquire-course {
+  padding: 0.6rem;
+  width: 70%;
+  margin: 2rem auto 1rem;
+}
