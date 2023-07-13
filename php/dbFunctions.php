@@ -40,6 +40,5 @@ function getAvailableCourses($db, $id_usuario)
 function subscribeInCourse($db, $id_curso, $id_usuario,)
 {
   $query = "INSERT INTO tb_aluno_curso VALUES($id_curso, $id_usuario)";
-  $result = pg_query($db, $query);
-  return $result;
+  pg_query($db, $query);
 }

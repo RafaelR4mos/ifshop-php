@@ -7,6 +7,7 @@ if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
   $userName = $_COOKIE['userName'];
   $id_usuario = $_COOKIE['userId'];
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +20,7 @@ if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
   <title>Adquira cursos!</title>
   <link rel="stylesheet" href="../styles/global.css">
   <link rel="stylesheet" href="../styles/meus-cursos.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -33,12 +35,12 @@ if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
   </header>
 
   <main class="page-container">
-    <div class="page-info">
+    <form class="page-info">
       <?php
       echo '<h1>' . 'Bem vindo, ' . $userName . '!' . '</h1>';
       echo '<span>' . 'Cursos adquiridos ' . $courses_quantity[0]['course_quantity'] . '</span>';
       ?>
-    </div>
+    </form>
 
     <h2>Adquira outros cursos</h2>
     <div class="courses-container">
@@ -47,7 +49,7 @@ if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
       foreach ($all_courses as $course) {
         echo
         '
-      <form method="get" class="course">
+      <form action="acquireCourse.php?id=' . $course["id_curso"] . '"  class="course" method="POST">
       <img src="' . $course["img_capa_curso"] . '" class="card-img">
       <div class="course-header">
         <div>
@@ -74,3 +76,18 @@ if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
 </body>
 
 </html>
+
+<?php
+if (isset($_GET['id'])) {
+  $id_curso = $_GET['id'];
+  global $db;
+  subscribeInCourse($db, $id_curso, $id_usuario);
+  echo
+  '
+    <script>
+      alert("Curso adicionado com sucesso!");
+      window.location.href = "acquireCourse.php";
+    </script>
+  ';
+}
+?>
