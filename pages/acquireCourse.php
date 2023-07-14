@@ -17,6 +17,7 @@ if (!isset($_COOKIE['userName']) || !isset($_COOKIE['userId'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="SVG" href="../assets/ifsul-logo.svg" />
   <title>Adquira cursos!</title>
   <link rel="stylesheet" href="../styles/global.css">
   <link rel="stylesheet" href="../styles/meus-cursos.css">

@@ -13,8 +13,11 @@ $query = "INSERT INTO tb_aluno VALUES($selectDinamico, '{$nomeInput}', '{$emailI
 $result = pg_query($db, $query);
 
 if ($result) {
-  echo "<script>alert('Usuário cadastro com sucesso!')</script>";
-  header('Location: /ifshop-php/pages/login.html');
+  echo "
+  <script>
+  alert('Usuário cadastro com sucesso!')
+  window.location.href = '/ifshop-php/pages/login.html'
+  </script>";
 } else {
   echo "Erro na entrada dos dados\n";
 }
